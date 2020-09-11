@@ -1,19 +1,24 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="conatiner-fluid">
+    <!-- <Overview :getglobal="getglobals" :getcountrie="getcountries" /> -->
+    <!-- <Sidebar/> -->
+
+    <Brew />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Brew from "./components/Brew.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    Brew,
+  },
+  data() {
+    return {};
+  },
+};
 </script>
 
 <style>
