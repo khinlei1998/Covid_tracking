@@ -1,43 +1,52 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="col-4">
-        <h1 class="text-center">List</h1>
-        <b-form-select v-model="selected" class="mb-3">
-          <option v-for="(getcountry, index) in getcountries" :key="index">
-            {{ getcountry.Country }}
-          </option>
-        </b-form-select>
-        <!-- {{message}} -->
+  <div class="container-fluid">
+    <div class="row" id="main">
+      <div class="col-3" >
+      <Sidebar/>
+           
+     </div>
+      <div class="col-9" >
+        
+        <BrewMap :getcountries="getcountries" />
       </div>
-      <div class="col-8"></div>
-      <BrewMap />
     </div>
   </div>
 </template>
+
 <script>
+
 import { mapState } from "vuex";
+import Sidebar from "./Sidebar.vue";
 import BrewMap from "./BrewMap.vue";
 
 export default {
   components: {
     BrewMap,
+    Sidebar
+   
+    
   },
   data() {
     return {
       allcountries: [],
       selected: "",
+      hello: "test",
+      ans: [],
     };
   },
 
   mounted() {
     this.$store.dispatch("loadcountry");
-    this.$store.dispatch("loadlatlng");
+    this.$store.dispatch("loadglobal");
   },
 
   computed: {
-    ...mapState(["getcountries", "getlatlng", "getglobals"]),
+    ...mapState(["getcountries", "getglobal"]),
+
   },
 };
 </script>
-<style scoped></style>
+<style >
+
+
+</style>

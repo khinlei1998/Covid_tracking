@@ -7,43 +7,46 @@ export const store = new Vuex.Store({
         getcountries:[
 
         ],
-        getlatlng:[],
+        getglobal:[],
         getglobals:[]
     },
     actions:{
         loadcountry({commit}) {
-            axios.get('https://api.covid19api.com/summary')
+            axios.get('https://www.trackcorona.live/api/countries')
             .then(result => {
-                console.log(result.data.Countries)
-                // console.log(result.data.Global)
+                console.log(result.data)
+                //  console.log(result.data.Global)
                
-              commit('getcountry', result.data.Countries);
-              commit('getglobal', result.data.Global);
+              commit('getcountry',result.data.data);
+              // commit('getglobal', result.data.Global);
             }).catch(error => {
               throw new Error(`API ${error}`);
             });
           },
 
-          loadlatlng({commit}) {
-            axios.get('https://raw.githubusercontent.com/eesur/country-codes-lat-long/master/country-codes-lat-long-alpha3.json')
+          loadglobal({commit}) {
+            axios.get('https://api.thevirustracker.com/free-api?global=stats')
             .then(result => {
-                console.log(result.data)
+                console.log(result.data.results)
+                //  console.log(result.data.Global)
                
-              commit('getlatlng', result.data);
+              commit('getglobal',result.data.results);
+              // commit('getglobal', result.data.Global);
             }).catch(error => {
               throw new Error(`API ${error}`);
             });
           },
+
     },
     mutations:{
           getcountry(state, getcountries) {
             state.getcountries = getcountries;
           },
-          getglobal(state, getglobals) {
-            state.getglobals = getglobals;
-          },
-          getlatlng(state, getlatlng) {
-            state.getlatlng = getlatlng;
+          // getglobal(state, getglobals) {
+          //   state.getglobals = getglobals;
+          // },
+          getglobal(state, getglobal) {
+            state.getglobal = getglobal;
           }
     },
 })

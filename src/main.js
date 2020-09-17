@@ -8,6 +8,13 @@ import Vue from 'vue'
 import App from './App.vue'
 import  BootstrapVue  from 'bootstrap-vue'
 import { store } from './store/store'
+// scrollbar
+import PerfectScrollbar from 'vue2-perfect-scrollbar'
+import 'vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css'
+ 
+Vue.use(PerfectScrollbar)
+
+
 
 // Vue.component('l-map', LMap);
 // Vue.component('l-tile-layer', LTileLayer);
@@ -30,11 +37,6 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 // axios
 // google map
-
-
-
-
-
 
 
 Vue.use(BootstrapVue)
