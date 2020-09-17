@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "start": "node server.js"
   },
   "dependencies": {
     "@jeremyhamm/vue-slider": "^0.2.0",
@@ -13,6 +14,7 @@
     "bootstrap": "^4.5.2",
     "bootstrap-vue": "^2.16.0",
     "core-js": "^3.6.5",
+    "express": "^4.17.1",
     "gmap-vue": "^1.4.0",
     "leaflet": "^1.7.1",
     "vue": "^2.6.12",
