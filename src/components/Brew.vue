@@ -8,7 +8,7 @@
         </div>
         <div class="col-md-9" id="two">
           <BrewMap :getcountries="getcountries" />
-        </div>
+         </div>
       </div>
     </div>
   </div>
@@ -46,5 +46,8 @@ export default {
 <style scoped>
 #one {
   border: 1px solid lightgray;
+}
+#main{
+  background-color: white;
 }
 </style>
