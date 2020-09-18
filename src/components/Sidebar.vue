@@ -67,7 +67,7 @@ export default {
 </script>
 <style scoped>
 #sidebar {
-  
+    background-color: pink;
 
   text-align: center;
 }

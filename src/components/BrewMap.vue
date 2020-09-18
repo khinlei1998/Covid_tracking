@@ -1,7 +1,7 @@
 <template>
   <div class="row map">
     <!-- {{ getcountrie }} -->
-    <!-- <h2>Center is {{ currentcenter }}, zoom is {{ currentzoom }}</h2> -->
+    <h2>Center is {{ currentcenter }}, zoom is {{ currentzoom }}</h2>
     <l-map
       @update:zoom="zoomupdate"
       @update:center="centerupdate"
