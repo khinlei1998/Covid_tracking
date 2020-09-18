@@ -1,20 +1,20 @@
 <template>
-  <div class="container-fluid">
-    <div class="row" id="main">
-      <div class="col-3" >
-      <Sidebar/>
-           
-     </div>
-      <div class="col-9" >
-        
-        <BrewMap :getcountries="getcountries" />
+  <!-- <div class="container-fluid"> -->
+  <div class="row" id="main">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3" id="one">
+          <Sidebar />
+        </div>
+        <div class="col-md-9" id="two">
+          <BrewMap :getcountries="getcountries" />
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-
 import { mapState } from "vuex";
 import Sidebar from "./Sidebar.vue";
 import BrewMap from "./BrewMap.vue";
@@ -22,9 +22,7 @@ import BrewMap from "./BrewMap.vue";
 export default {
   components: {
     BrewMap,
-    Sidebar
-   
-    
+    Sidebar,
   },
   data() {
     return {
@@ -42,11 +40,11 @@ export default {
 
   computed: {
     ...mapState(["getcountries", "getglobal"]),
-
   },
 };
 </script>
-<style >
-
-
+<style scoped>
+#one {
+  border: 1px solid lightgray;
+}
 </style>

@@ -25,15 +25,30 @@
         :width="circle.width"
         :pane="circle.pane"
       >
-        <l-popup
-          ><h6>Country:{{ alocation.location }}<br>
-           Confirmed:{{
+        <l-popup>
+          <h6 style="text-align:center">{{ alocation.location }}</h6>
+          <div id="divider"></div>
+         
+                <div style="margin-top:8px">
+               <b-icon icon="circle-fill" variant="warning" font-scale="0.7"></b-icon>
+               <p style="margin-bottom:7px; display:inline" >Confirmed:
+                      {{
             alocation.confirmed
-          }}<br>
-          Recovered:{{ alocation.recovered }}<br> Death:{{
+          }}</p><br>
+          </div>
+
+            <div style="margin-top:8px">
+           <b-icon icon="circle-fill" variant="success" font-scale="0.7"></b-icon>
+            <p style="margin-bottom:9px;display:inline">  Recovered:     {{ alocation.recovered }}</p><br>
+            </div>
+
+            <div  style="margin-top:8px">
+            <b-icon icon="circle-fill" variant="danger" font-scale="0.7"></b-icon>
+            <p style="margin-bottom:9px;display:inline"> Death:    {{
             alocation.recovered
-          }}</h6>
-        
+          }}</p>
+          </div>
+
         </l-popup>
       </l-circle>
     </l-map>
@@ -47,10 +62,10 @@ import icon from "../assets/icon.png";
 export default {
   data() {
     return {
-      currentcenter: L.latLng(16.838227, 96.164627),
-      currentzoom: 12,
+      currentcenter: L.latLng(38.5879,36.6945),
+      currentzoom: 4,
       zoom: 4,
-      center: L.latLng(1.714952, 9.174802),
+      center: L.latLng(38.5879,36.6945),
       url:
         // "	https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
         
@@ -104,7 +119,7 @@ export default {
 </script>
 <style>
 .map {
-  height: 95vh;
+  height: 100%;
   /* width: 100%; */
 }
 l-circle {
@@ -116,8 +131,12 @@ l-circle {
   width:200px;
   color: black;
 }
-/* l-popup{
-  width:20px;
- 
-} */
+#divider {
+  background-color: grey;
+  height: 1px;
+  width: 90%;
+  margin-left:10px;
+  /* line-height: 20px; */
+  /* margin-top: 16px; */
+}
 </style>
