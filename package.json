@@ -6,8 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "start": "node server.js",
-    "deploy": "sh deploy.sh"
+    "start": "node server.js"
+
   },
   "dependencies": {
     "@jeremyhamm/vue-slider": "^0.2.0",
